@@ -6,7 +6,7 @@ Manga.find_or_create_by(title:"Tokyo Ghoul", year: 2011, rating: "17+")
 
 Manga.find_or_create_by(title:"One Punch-Man", year: 2012, rating: "14+")
 
-Manga.find_or_create_by(title:"Fullmental Alchemist", year: 2001, rating: "14+")
+Manga.find_or_create_by(title:"Fullmetal Alchemist", year: 2001, rating: "14+")
 
 Manga.find_or_create_by(title:"Jujutsu Kaisen", year: 2018 , rating: "17+")
 

@@ -13,14 +13,18 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    /* background-color: honeydew; */
+    background-image: url('https://wallpapercave.com/wp/wp5203544.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #333;
-    font-family: Sans-Serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     line-height: 18px;
   }
 
   .wrapper {
-    background: #fff;
+    background: rgb(166, 132, 132);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
