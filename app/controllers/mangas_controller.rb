@@ -5,22 +5,23 @@ class MangasController < ApplicationController
         erb :'mangas/index'
     end 
 
+    get '/mangas/new' do
+        #form to create new movie
+        erb :'mangas/new'
+    end
+
     get '/mangas/:id' do
         @manga = Manga.find(params[:id])
         erb :'mangas/show'
     end 
 
-    # get '/mangas/new' do
-    #     #form to create new movie
-    #     erb :'mangas/new'
-    # end
+    get '/mangas/:id/edit' do
+    end 
 
-    # get '/mangas/:id/edit'
-    #     erb :'mangas/edit'
-
-    # post '/mangas' do 
-    # # create new mangas
-    # end 
+    post '/mangas' do 
+        @manga = Manga.new(params)
+        # @manga.save
+    end 
 
     # patch '/mangas/:id' do
     #     # edit a particular manga selectin
