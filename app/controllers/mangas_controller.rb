@@ -18,17 +18,22 @@ class MangasController < ApplicationController
 
     get '/mangas/:id/edit' do
         @manga = Manga.find(params[:id])
+
+        erb :'mangas/edit'
     end 
 
     post '/mangas' do 
         @manga = Manga.new(params)
-        # binding.pry
-        # @manga.save
+        @mangas = Manga.all
+        @manga.save
+        redirect '/mangas'
     end 
 
-    patch '/mangas/:id' do
-        # edit a particular manga selection
-        # @movie = Movie.find(params[:id])
+    patch "/mangas/:id" do 
+        @manga = Manga.find(params[:id])
+        @manga.update(params["manga"])
+        
+        redirect :"mangas/#{@manga.id}"
     end 
 
     delete '/mangas/:id' do 

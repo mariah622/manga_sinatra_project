@@ -1,0 +1,9 @@
+<h2>Edit your Manga below:</h2>
+
+<h3><%=@manga.title%></h3>
+
+<form method='POST' action='/mangas/<%=@manga.id%>' >
+<input type='hidden' name='_method'value='PATCH'/>
+<p>Title:<input type='text' name='manga[title]' value='<%=@manga.title%>'></p>
+<input type='Submit' value='Edit Manga' id='submit'>
+</form>

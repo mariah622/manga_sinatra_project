@@ -1,6 +1,6 @@
-<h1>Manga List</h1>
+<h2>Manga List</h2>
 <ul>
     <% @mangas.each do |m| %>
-        <li><%= m.title %></li><br>
+        <li><a href="/mangas/<%=m.id%>"><%= m.title %> </a></li>
     <%end%>
 </ul>
