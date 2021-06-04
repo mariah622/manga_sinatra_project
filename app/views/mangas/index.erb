@@ -1,6 +1,17 @@
 <h2>Manga List</h2>
+
+
+<%if logged_in?%>
+    <h3>Hello! <%=current_user.email%></h3>
+<%end%>
 <ul>
     <% @mangas.each do |m| %>
         <li><a href="/mangas/<%=m.id%>"><%= m.title %> </a></li>
     <%end%>
 </ul>
+
+
+
+<form method="POST" action="/logout">
+<input type="submit" value="Log Out">
+</form

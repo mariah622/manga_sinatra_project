@@ -21,3 +21,4 @@ Genre.find_or_create_by(name: "Action")
 Genre.find_or_create_by(name: "Adventure")
 Genre.find_or_create_by(name: "Fantasy")
 Genre.find_or_create_by(name: "Supernatural")
+
