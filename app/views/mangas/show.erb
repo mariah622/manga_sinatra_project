@@ -1,1 +1,24 @@
 <h2><%=@manga.title%></h2>
+
+
+
+
+
+
+
+
+
+
+
+<a href='/mangas/<%=@manga.id%>/edit'>Update Manga</a>
+
+
+<form method="POST" action="/mangas/<%=@manga.id%>">
+<input type="hidden" name="_method" value="DELETE"  />
+<input type="submit" value="Delete Manga" />
+</form>
+
+
+
+
+

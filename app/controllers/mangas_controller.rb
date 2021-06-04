@@ -33,12 +33,14 @@ class MangasController < ApplicationController
         @manga = Manga.find(params[:id])
         @manga.update(params["manga"])
         
-        redirect :"mangas/#{@manga.id}"
+        redirect :'mangas/#{@manga.id}'
     end 
 
     delete '/mangas/:id' do 
-        #edit a particular manga selection
-        # @movie = Movie.find(params[:id])
+        #delete a particular manga selection
+        @manga = Manga.find(params[:id])
+        @manga.destroy
+        redirect :'/mangas'
     end 
 
 end 

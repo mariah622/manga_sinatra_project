@@ -1,9 +1,18 @@
-<h2>Edit your Manga below:</h2>
+<h2>Update your Manga below:</h2>
 
 <h3><%=@manga.title%></h3>
 
 <form method='POST' action='/mangas/<%=@manga.id%>' >
 <input type='hidden' name='_method'value='PATCH'/>
 <p>Title:<input type='text' name='manga[title]' value='<%=@manga.title%>'></p>
-<input type='Submit' value='Edit Manga' id='submit'>
+<p>Year:<input type='text' name='manga[year]' value='<%=@manga.year%>'></p>
+<input type='Submit' value='Update Manga' id='submit'>
 </form>
+
+
+<%#  t.string :title
+      t.integer :year
+      t.integer :rating
+      t.integer :genre_id
+      t.integer :creator_id
+      t.integer :user_id %>
