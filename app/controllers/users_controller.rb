@@ -25,13 +25,19 @@ class UsersController < ApplicationController
         # we must save this user. if user is not save, they should be redicreted. if they did not fill in the proper infr we must redirect back to teh sign in page. after a successful sign in, we then can redirect to '/animes' page. 
     end
 
-    # get '/login' do 
-    #     erb :'users/login'
-    # end 
+    get '/login' do 
+        erb :'users/login'
+    end 
 
-    # post '/login' do 
-        # redirect to '/animes'. it should only redirect if you are loggin in. 
-    # end 
+    post '/login' do 
+        # binding.pry
+        user = User.find_by_email(params[:email])
+        if user && user.authenticate(params[:password])
+            session[:user_id] = user.id
+            redirect to '/mangas'
+        end
+        redirect '/login'
+    end
 
     post '/logout' do 
         session.clear

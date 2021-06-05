@@ -20,11 +20,12 @@
 
 <a href='/mangas/<%=@manga.id%>/edit'>Update Manga</a>
 
-
+<% if @manga.user == current_user %>
 <form method="POST" action="/mangas/<%=@manga.id%>">
 <input type="hidden" name="_method" value="DELETE"  />
 <input type="submit" value="Delete Manga" />
 </form>
+<% end %>
 
 
 
