@@ -1,24 +1,27 @@
 <h2><%=@manga.title%></h2>
 
-<% if @manga.creator %>
-    <h3>Creator: <%=@manga.creator.name%><h3>
-<% else %>
-    <h3>Creator: N/A</h3>
-<% end %>
+<h4>Year released: <%=@manga.year%>
+<h4>Rating: <%=@manga.rating%>
 
+<% if @manga.creator %>
+    <h4>Creator: <%=@manga.creator.name%></h4>
+<% else %>
+    <h4>Creator: N/A</h4>
+<% end %>
 
 <% if @manga.genre %>
-    <h3>Genre: <%=@manga.genre.name%><h3>
+    <h4>Genre: <%=@manga.genre.name%></h4>
 <% else %>
-    <h3>Genre N/A</h3>
+    <h4>Genre N/A</h4>
 <% end %>
 
 
 
 
 
-
-<a href='/mangas/<%=@manga.id%>/edit'>Update Manga</a>
+<% if @manga.user == current_user %>
+    <a href='/mangas/<%=@manga.id%>/edit'>Update Manga</a>
+<% end %>
 
 <% if @manga.user == current_user %>
 <form method="POST" action="/mangas/<%=@manga.id%>">
