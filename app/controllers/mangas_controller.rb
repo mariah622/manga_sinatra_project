@@ -30,23 +30,27 @@ class MangasController < ApplicationController
         erb :'mangas/edit'
     end 
 
-    post '/mangas' do 
+    post '/mangas' do
         redirect_if_not_logged_in
-
-        @manga = Manga.new(params)
-        @manga = Manga.new(params)
+        @manga = Manga.new(params['manga'])
         @manga.user_id = session[:user_id]
-        @mangas = Manga.all
-
-        if !params["genre"]["name"].empty?
-          @manga.genre = Genre.new(name: params["genre"]["name"])
+        @genre = params[:genre][:name].capitalize
+        if genre = Genre.find_by_name(@genre)
+            @manga.genre = genre
+        else
+            @manga.genre = Genre.create(name: @genre)
         end
-    
+
+        @creator = params[:creator][:name].capitalize
+        if creator = Creator.find_by_name(@creator)
+            @manga.creator = creator
+        else
+            @manga.creator = Creator.create(name: @creator)
+        end
+        # binding.pry
         @manga.save
-
-
         redirect '/mangas'
-    end 
+    end
 
     patch "/mangas/:id" do 
         redirect_if_not_logged_in 

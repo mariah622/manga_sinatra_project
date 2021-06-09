@@ -1,10 +1,11 @@
 <h2>Create new Manga here!</h2>
 
 <form method='POST' action='/mangas' >
-<p>Title:<input type='text' name='title'></p>
-<p>Year released: <input type='text' name='year'></p>
-<p>Age Rating: <input type='text' name='rating'></p>
+<p>Title:<input type='text' name='manga[title]'></p>
+<p>Year released: <input type='text' name='manga[year]'></p>
+<p>Age Rating: <input type='text' name='manga[rating]'></p>
 <p>Genre: <input type="text" name="genre[name]" id="genre_id"></p>
+<p>Creator: <input type="text" name="creator[name]" id="creator_id"></p>
 
 
 <%# I need both genre and creator year as well but must figure out who to have it text input while creating a genre_id , & creator_id as well %>
