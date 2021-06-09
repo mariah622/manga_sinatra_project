@@ -8,6 +8,7 @@ class MangasController < ApplicationController
 
     get '/mangas/new' do
         redirect_if_not_logged_in 
+        @genres = Genre.all
         #form to create new movie
         erb :'mangas/new'
     end
@@ -31,11 +32,19 @@ class MangasController < ApplicationController
 
     post '/mangas' do 
         redirect_if_not_logged_in
+
+        @manga = Manga.new(params)
         @manga = Manga.new(params)
         @manga.user_id = session[:user_id]
         @mangas = Manga.all
+
+        if !params["genre"]["name"].empty?
+          @manga.genre = Genre.new(name: params["genre"]["name"])
+        end
+    
         @manga.save
-        binding.pry
+
+
         redirect '/mangas'
     end 
 
