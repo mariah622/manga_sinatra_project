@@ -5,7 +5,4 @@ class Manga < ActiveRecord::Base
 
     validates :title, :year, :rating, :genre_id, :creator_id, presence: true
 
-    # t.string :title
-    # t.integer :year
-    # t.integer :rating
 end 

@@ -29,5 +29,12 @@ class ApplicationController < Sinatra::Base
     end 
   end 
 
+  private
+  def redirect_if_logged_in
+    if logged_in?
+      redirect 'mangas'
+    end 
+  end
+
 
 end

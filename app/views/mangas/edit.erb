@@ -6,14 +6,8 @@
 <input type='hidden' name='_method'value='PATCH'/>
 <p>Title: <input type='text' name='manga[title]' value='<%=@manga.title%>'></p>
 <p>Year released: <input type='text' name='manga[year]' value='<%=@manga.year%>'></p>
-<p>Age Rating: <input type='text' name='manga[title]' value='<%=@manga.rating%>'></p>
+<p>Age Rating: <input type='text' name='manga[rating]' value='<%=@manga.rating%>'></p>
+<p>Genre: <input type="text" name="genre[name]" value='<%=@manga.genre.name%>'></p>
+<p>Creator: <input type="text" name="creator[name]" value='<%=@manga.creator.name%>'></p>
 <input type='Submit' value='Update Manga' id='submit'>
 </form>
-
-
-<%#  t.string :title
-      t.integer :year
-      t.integer :rating
-      t.integer :genre_id
-      t.integer :creator_id
-      t.integer :user_id %>
